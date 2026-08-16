@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Content {
+  id             String    @id @default(cuid())
+  niche          String // id from lib/niches.ts, e.g. "education" | "health" | "finance" | ...
+  topicTitle     String
+  topicSource    String // "youtube" | "google_trends" | "mixed"
+  topicScore     Float?
+  title          String
+  script         String
+  description    String
+  hashtags       String // comma-separated
+  visualKeywords String? // comma-separated, AI-extracted, used for footage search
+  platform       String? // "youtube" | "tiktok" | "instagram"
+
+  audioUrl     String? // rendered narration file
+  videoUrl     String? // final rendered MP4
+  renderStatus String  @default("not_started") // "not_started" | "narration" | "footage" | "subtitles" | "composing" | "rendered" | "failed"
+  renderError  String?
+
+  status           String    @default("draft") // "draft" | "scheduled" | "published"
+  publishingMethod String? // "manual" | "oauth_demo" — oauth_demo never actually posts, see PRD.md §4b
+  scheduledAt      DateTime?
+  publishedAt      DateTime?
+
+  youtubeVideoId  String? // set once the user links the real, published video
+  youtubeVideoUrl String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  analytics AnalyticsSnapshot[]
+  comments  TopComment[]
+}
+
+model AnalyticsSnapshot {
+  id         String   @id @default(cuid())
+  contentId  String
+  content    Content  @relation(fields: [contentId], references: [id])
+  views      Int
+  likes      Int
+  comments   Int
+  recordedAt DateTime @default(now())
+}
+
+model TopComment {
+  id        String   @id @default(cuid())
+  contentId String
+  content   Content  @relation(fields: [contentId], references: [id])
+  author    String
+  text      String
+  likeCount Int
+  fetchedAt DateTime @default(now())
+}
