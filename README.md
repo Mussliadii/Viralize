@@ -28,6 +28,7 @@ Pick a niche → AI discovers what's actually trending → AI writes the script 
 
 - [Overview](#overview)
 - [Key features](#key-features)
+- [Screenshots](#screenshots)
 - [Architecture](#architecture)
   - [System pipeline](#system-pipeline)
   - [Full-cycle sequence diagram](#full-cycle-sequence-diagram)
@@ -65,6 +66,29 @@ The core bet of this build was **depth over demo-safety** — instead of mocking
 | 4 | **Video rendering** | Composes an actual 1080×1920 MP4: AI narration (TTS), matching stock footage (Pexels), and burned-in subtitles — via `ffmpeg` |
 | 5 | **Scheduler** | Calendar-based scheduling with a **Publishing Method** choice: "Manual Upload" (real, fully functional) or "Auto-post via OAuth" (clearly-labeled UI demo — see [§4b](../PRD.md)) |
 | 6 | **Real performance analytics** | Once you link back a published YouTube video by URL, pulls real views/likes/comments over time and real top comments via the YouTube Data API |
+
+## Screenshots
+
+Captured from a live, unscripted run of the app — every screen below reflects real API responses (real trending topics, a real AI-generated script, a real rendered video, real YouTube analytics), not mocked fixtures.
+
+<table>
+<tr>
+<td width="50%"><strong>Landing</strong><br><img src="docs/screenshots/01-landing.png" width="100%"></td>
+<td width="50%"><strong>Niche Selection</strong><br><img src="docs/screenshots/02-niche-select.png" width="100%"></td>
+</tr>
+<tr>
+<td><strong>Trending Topics</strong> — live YouTube + Google Trends data, ranked by Groq<br><img src="docs/screenshots/03-trends.png" width="100%"></td>
+<td><strong>AI-Generated Script</strong> — editable title, script, description, hashtags<br><img src="docs/screenshots/04-generate.png" width="100%"></td>
+</tr>
+<tr>
+<td><strong>Video Rendering</strong> — live step progress (narration → footage → subtitles → composing)<br><img src="docs/screenshots/05-render-progress.png" width="100%"></td>
+<td><strong>Video Preview & Scheduler</strong> — real rendered MP4 with burned-in subtitles<br><img src="docs/screenshots/06-preview-scheduler.png" width="100%"></td>
+</tr>
+<tr>
+<td><strong>Content Calendar</strong><br><img src="docs/screenshots/07-calendar.png" width="100%"></td>
+<td><strong>Real YouTube Analytics</strong> — live stats pulled after refresh<br><img src="docs/screenshots/08-analytics.png" width="100%"></td>
+</tr>
+</table>
 
 ## Architecture
 
