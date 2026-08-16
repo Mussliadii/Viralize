@@ -1,14 +1,30 @@
+<div align="center">
+
 # Viralize
 
-**AI-powered content automation, end to end — from "what's trending" to a real, published video with real analytics.**
+### AI-powered content automation — from "what's trending" to a published video with real analytics
 
-Pick a niche → AI discovers what's actually trending in it → AI generates a full script and metadata → the app renders an actual short video (narration + stock footage + burned-in subtitles) → you schedule and publish it → the app tracks its **real** performance on YouTube over time.
+<p>
+  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-16-000000?style=flat-square&logo=nextdotjs&logoColor=white">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white">
+  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white">
+  <img alt="Prisma" src="https://img.shields.io/badge/Prisma-7-2D3748?style=flat-square&logo=prisma&logoColor=white">
+  <img alt="LLM" src="https://img.shields.io/badge/LLM-Groq-F55036?style=flat-square">
+  <img alt="Status" src="https://img.shields.io/badge/status-6%2F6_phases_complete-0891B2?style=flat-square">
+</p>
 
-Built for the Social Media Automation Hackathon. Every stage in this pipeline calls a real external API and produces real output — there is no "demo data" fallback standing in for the actual feature, with one clearly-labeled exception (see [What's real vs. simulated](#whats-real-vs-simulated)).
+Pick a niche → AI discovers what's actually trending → AI writes the script → the app renders a real short video → you schedule and publish it → the app tracks its real YouTube performance.
+
+**[Overview](#overview)** · **[Architecture](#architecture)** · **[Tech Stack](#tech-stack)** · **[Getting Started](#getting-started)** · **[Documentation](#documentation-index)**
+
+</div>
 
 ---
 
-## Table of contents
+> Built for the Social Media Automation Hackathon. Every stage in this pipeline calls a real external API and produces real output — no "demo data" fallback stands in for an actual feature, with one clearly-labeled exception (see [What's real vs. simulated](#whats-real-vs-simulated)).
+
+<details>
+<summary><strong>Table of contents</strong></summary>
 
 - [Overview](#overview)
 - [Key features](#key-features)
@@ -28,6 +44,8 @@ Built for the Social Media Automation Hackathon. Every stage in this pipeline ca
 - [Concept origin](#concept-origin)
 - [Project status](#project-status)
 - [Documentation index](#documentation-index)
+
+</details>
 
 ---
 
